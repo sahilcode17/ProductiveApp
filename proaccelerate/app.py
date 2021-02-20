@@ -19,8 +19,12 @@ def index():
 def camera():
     return render_template('camera.html',camera_trigger=camera_trigger)
 
-@app.route('/home')
+@app.route('/home' , methods=["GET", "POST"])
 def home():
+    if request.method == "POST":
+        form = request.form
+        my_time = form['my_time']
+        return render_template('yourway.html',my_time=my_time,time=time)
     return render_template('home.html')
 
 @app.route('/ourway')
@@ -30,4 +34,4 @@ def ourway():
 
 @app.route('/yourway')
 def yourway():
-    return render_template('yourway.html',time=time)
+    return render_template('yourway.html')

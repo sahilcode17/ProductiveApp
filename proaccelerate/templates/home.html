@@ -8,6 +8,15 @@
   <body>
     <a href="ourway">We will prepare schedule for you (researched based) </a>
     <br />
-    <a href="yourway">Manual schedule</a>
+    <a onclick="f()">Manual schedule</a>
+    <form action="/home" method="POST">
+      <input name="my_time" placeholder="enter time" />
+      <button type="submit">my way of study</button>
+    </form>
+    <script>
+      function f() {
+        alert("enter time field and then press button");
+      }
+    </script>
   </body>
 </html>

@@ -176,9 +176,19 @@ function myFunction() {
 
     <script>
         // var button =
-        setInterval(click_for_me,30000);
+        setInterval(click_for_me,10000);
         function click_for_me(){
-            $("#me").trigger( "click" );
+            var lol=setTimeout(innerone, 1000);
+            function innerone(){
+            for(let i=0 ; i<10 ; i++){
+                $("#me").trigger( "click" );
+            };
+            if(i===10){
+                clearTimeout(lol);
+            }
+            }
+            
+            
         }
         // click_for_me();
 
