@@ -1,22 +1,89 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page</title>
-  </head>
-  <body>
-    <a href="ourway">We will prepare schedule for you (researched based) </a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>ProductiveApp</title>
+  
+  <style>
+    
+    body {
+    display: flex;
+    min-height: 10vh;
+    flex-direction: column;
+  
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+  .page-footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body class="grey lighten-3"">
+
+  <!-- NAVBAR -->
+  <nav class="z-depth-0 blue lighten-4">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">ProAccelerate</a>
+      
+    </div>
+  </nav>
+
+    <h2 class="center-align">Plan A Schedule for you ....</h2>
+  
+  <div style="width:30%; align-content: center; position:relative; margin:0 auto; font-weight: 600;font-size:large; "  class="card-panel">
+  
+    <a  class="blue-text text-darken-2" href="ourway">We will prepare schedule for you (researched based) </a>
+  </div>
+  
+  <div style="width:30%; align-content: center; position:relative; margin:0 auto;" class="card-panel teal lighten-2">In this we choose a predefined time duration for you to perform your tasks (which is set to be 50 minutes)  as well as the ideal duration of breaks (set to be 10 minutes) for you to feel refreshed and concentrate better on your work. The duration that we have chosen for you has been scientifically proven to increase your efficiency and make you more productive.
+  </div>
+            
+
+    
     <br />
-    <a onclick="f()">Manual schedule</a>
+    <div style="width:30%;  align-content: center; position: relative; margin:10 auto;  font-weight: 600; font-size:large; " class="card-panel">
+  
+      <a class="blue-text text-darken-2" onclick="f()">Manual schedule</a>
     <form action="/home" method="POST">
       <input name="my_time" placeholder="enter time" />
-      <button type="submit">my way of study</button>
+      <button class="btn waves-effect waves-light" type="submit">my way of study</button>
+      
     </form>
+    </div>
+    <div style="width:30%; align-content: center; position:relative; margin:0 auto;" class="card-panel teal lighten-2">If you wish to make your own plan for choosing the duration of completing your task as well as the time interval of your breaks that you feel are most suitable for you, go ahead with this option.
+    </div>
+   
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Come and Join Us </h5>
+            <p class="grey-text text-lighten-4">We are Here To Provide the Best Web App for Your Productivity</p>
+          </div>
+          
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © By ProAccelerate Team
+        
+        </div>
+      </div>
     <script>
       function f() {
         alert("enter time field and then press button");
       }
     </script>
+    
   </body>
 </html>

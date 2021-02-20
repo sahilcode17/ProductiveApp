@@ -32,6 +32,29 @@
   width: 100%;
   text-align: center;
 }
+hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: url("../images/img1.jpeg");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
 
   </style>
 </head>
@@ -106,11 +129,19 @@
     </div>
   </div>
 
+
   <!-- ACCOUNT MODAL -->
   <div id="modal-account" class="modal">
     <div class="modal-content center-align">
       <h4>Account details</h4><br />
       <div class="account-details"></div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-text">
+      <h1>I am John Doe</h1>
+      <p>And I'm a Photographer</p>
+      <button>Hire me</button>
     </div>
   </div>
 

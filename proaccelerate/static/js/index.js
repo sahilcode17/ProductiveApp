@@ -1,6 +1,6 @@
 // DOM elements
 const guideList = document.querySelector(".guides");
-const go = document.querySelector(".go");
+
 const loggedOutLinks = document.querySelectorAll(".logged-out");
 const loggedInLinks = document.querySelectorAll(".logged-in");
 const accountDetails = document.querySelector(".account-details");
@@ -21,14 +21,14 @@ const setupUI = (user) => {
     // toggle user UI elements
     loggedInLinks.forEach((item) => (item.style.display = "block"));
     loggedOutLinks.forEach((item) => (item.style.display = "none"));
-    go.style.display="block";
+    
   } else {
     // clear account info
     accountDetails.innerHTML = "";
     // toggle user elements
     loggedInLinks.forEach((item) => (item.style.display = "none"));
     loggedOutLinks.forEach((item) => (item.style.display = "block"));
-    go.style.display="none";
+   
   }
 };
 
@@ -42,9 +42,9 @@ const setupGuides = (data) => {
             <li>
             <input style="opacity:1 ; pointer-events: auto; " type="radio" name="me" value='${guide.Time}' >
             <br>
-              <label style="font-size:30" class="grey lighten-4"> ${guide.Title} </label>
+              <label style="font-size:30; float:left;" class="grey lighten-4"> ${guide.Title} </label>
               <br>
-              <label style="font-size:30" class="white"> ${guide.Time} </label>
+              <label style="font-size:30;  " class="white"> ${guide.Time} </label>
             </li>
           `;
       html += li;
