@@ -37,8 +37,11 @@ const setupGuides = (data) => {
       const guide = doc.data();
       const li = `
             <li>
-              <div class="collapsible-header grey lighten-4"> ${guide.Title} </div>
-              <div class="collapsible-body white"> ${guide.Time} </div>
+            <input style="opacity:1 ; pointer-events: auto; " type="radio" name="me" value='${guide.Time}' >
+            <br>
+              <label class="grey lighten-4"> ${guide.Title} </label>
+              <br>
+              <label class="white"> ${guide.Time} </label>
             </li>
           `;
       html += li;
