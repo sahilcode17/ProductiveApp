@@ -5,3 +5,7 @@ app = Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
+@app.route('/camera')
+def camera():
+    return render_template('camera.html')
+
