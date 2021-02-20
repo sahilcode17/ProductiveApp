@@ -6,6 +6,7 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <title>ProductiveApp</title>
+  
   <style>
        input[type='radio']:after {
        opacity: 1;
@@ -14,17 +15,35 @@
     input[type='radio']:checked:after {
         opacity: 1;
     }
+    body {
+    display: flex;
+    min-height: 10vh;
+    flex-direction: column;
+    font-weight: 500;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+  .page-footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
   </style>
 </head>
 <body class="grey lighten-3"">
 
   <!-- NAVBAR -->
-  <nav class="z-depth-0 grey lighten-4">
+  <nav class="z-depth-0 blue lighten-4">
     <div class="nav-wrapper container">
-      
+      <a href="#" class="brand-logo">ProAccelerate</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li class="logged-in">
-            <a href="#" class="black-text modal-trigger" data-target="modal-account">Account</a>
+            <a href="#" class="grey-text  modal-trigger" data-target="modal-account">Account</a>
           </li>
           <li class="logged-in">
             <a href="#" class="grey-text" id="logout">Logout</a>
@@ -33,7 +52,7 @@
             <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create ToDo</a>
           </li>
           <li class="logged-out">
-            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+            <a href="#" class="grey-text large modal-trigger" data-target="modal-login">Login</a>
           </li>
           <li class="logged-out">
             <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
@@ -118,9 +137,27 @@
     <form action="/" method="POST" >
     <ul class="collapsible z-depth-0 guides" style="border: none;">
     </ul>
-    <button> Go </button>
+    <button class="btn waves-effect waves-light"> Go </button>
     </form type="submit">
   </div>
+  <!-- footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Come and Join Us </h5>
+          <p class="grey-text text-lighten-4">We are Here To Provide the Best Web App for Your Productivity</p>
+        </div>
+        
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © By ProAccelerate Team
+      
+      </div>
+    </div>
+  </footer>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
