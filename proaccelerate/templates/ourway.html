@@ -1,0 +1,199 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ourway</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  </head>
+  <style>
+    #container {
+       /* margin-top: 50px ;
+       /* margin: 0px auto;*/
+        width: 500px;
+        height: 375px;
+       /* border: 10px #333 solid; */
+        background-image: url(snapshots/download.jpg);
+        
+    }
+    #videoElement {
+        width: 500px;
+        height: 375px;
+      
+    }
+    .no-padding
+    {
+      padding-left: 0;
+      padding-right: 0;
+    
+    }
+    
+    #f_style
+    {
+        width: 100%;
+        height: 70%;  
+        margin-right: 10px; 
+      
+    }
+    
+    
+    
+    
+    </style>
+  <body>
+    <h1 id ="timedata" class="timedata">{{time}}</h1>
+    <h1>Our way of studying method whih we are following</h1>
+    <h1 id = "clock"></h1>
+
+
+    <canvas id="CANVAS" name="CANVAS" width="400" height="350">Your browser does not support Canvas.</canvas>
+  
+    
+    <div id="container"  name='cont' class="container-fluid no-padding ">
+       <video autoplay="true" id="videoElement" name='vid'>
+     
+       </video>
+    </div>
+
+ <a id="download" download="face.jpg"></form>
+<button onclick="myFunction(); download();" align="center" style="margin: 20px 250px auto " class="btn btn-primary dropdown-toggle" id="me" type="button" >capture</button></a>
+<!-- <button onclick="myfunction1()" >Trigger
+  </button> -->
+
+<script>
+
+  function download(){
+    var download = document.getElementById("download");
+    var image = document.getElementById("CANVAS").toDataURL("image/png")
+                    .replace("image/jpg", "image/octet-stream");
+        download.setAttribute("href", image);
+        // var url = window.location.pathname;
+        // var folderpath = url.substring(0,url.lastIndexOf('/')+1);
+        // alert(folderpath);
+        //download.setAttribute("download","archive.png");
+  }
+
+
+//   function myfunction1(){
+//     $( "#me" ).trigger( "click" );
+//   }
+
+
+  var video = document.querySelector("#videoElement");
+ 
+if (navigator.mediaDevices.getUserMedia) 
+{       
+    navigator.mediaDevices.getUserMedia({video: true})
+  .then(function(stream) {
+    video.srcObject = stream;
+  })
+  .catch(function(err0r) {
+    console.log("Something went wrong!");
+  });
+var i=0;
+function myFunction() {
+  var x =  document.getElementById("CANVAS") ;
+  var ctx = x.getContext("2d");
+  ctx.fillStyle = "#FF0000";
+  
+  ctx.drawImage(video, 0, 0, 400, 350);
+
+  //ctx.fillRect(20, 20, 150, 100);
+
+  if (i <10)
+  {
+  document.body.appendChild(x);
+  i=i+1;
+};
+
+
+}
+
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+    let total_time = document.getElementById("timedata").innerHTML;
+    document.getElementById("clock").innerHTML = total_time;
+    total_time = total_time.split(":")
+    
+    let total_hour = parseInt(total_time[0]);
+    let total_min = parseInt(total_time[1]);
+    let total_sec = total_time[2];
+
+    let currentTime = (total_hour<10 ? "0":"") + String(total_hour) + ":" + (total_min<10 ? "0":"") + String(total_min) + ":" + (total_sec<10 ? "0":"") + String(total_sec);
+    document.getElementById("clock").innerHTML = currentTime;
+
+    function showTime() {
+
+      if(total_sec === 0){
+        if(total_min === 0){
+          if(total_hour === 0){
+            alert("Time Up!!!");
+            clearInterval(interval);
+          }
+          else{
+            total_hour -= 1;
+            total_min = 59;
+            total_sec = 59;
+          }
+        }
+        else{
+          total_min -= 1;
+          total_sec = 59;
+        }
+
+      }
+      else{
+        total_sec -= 1;
+
+      }
+
+      let currentTime = (total_hour<10 ? "0":"") + String(total_hour) + ":" + (total_min<10 ? "0":"") + String(total_min) + ":" + (total_sec<10 ? "0":"") + String(total_sec);
+
+      document.getElementById("clock").innerHTML = currentTime;
+    }
+    
+    interval = setInterval(showTime, 1000);
+  </script>
+
+    <script>
+        // var button =
+        setInterval(click_for_me,30000);
+        function click_for_me(){
+            $("#me").trigger( "click" );
+        }
+        // click_for_me();
+
+
+//         setTimeout(function() {
+//     triggerClick('#me');
+// }, 5000);
+
+// function triggerClick(selector) {
+//     $(selector).trigger('click');
+//     selector = (selector == '#me') ? '#me' : '#me';
+//     setTimeout(function() {
+//         triggerClick(selector);
+//     }, 5000);
+// }
+    </script>
+  </body>
+</html>

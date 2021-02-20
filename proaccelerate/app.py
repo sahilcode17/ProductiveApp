@@ -1,13 +1,15 @@
 from flask import Flask,render_template,request
 app = Flask(__name__)
+time=0
 
 
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         form = request.form
-        key1 = form['me']
-        print(key1)
+        global time
+        time = form['me']
+        print(time)
         return render_template('home.html')
     return render_template('index.html')
 
@@ -23,9 +25,9 @@ def home():
 
 @app.route('/ourway')
 def ourway():
-    return render_template('ourway.html')
+    return render_template('ourway.html',time=time)
 
 
 @app.route('/yourway')
 def yourway():
-    return render_template('yourway.html')
+    return render_template('yourway.html',time=time)
