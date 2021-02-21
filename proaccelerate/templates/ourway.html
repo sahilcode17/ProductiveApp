@@ -115,6 +115,30 @@ function myFunction() {
 
 
 
+<!-- music and study companion-->
+
+<script
+type="text/javascript"
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"
+></script>
+<script type="text/javascript">
+$(function () {
+  $("#button").click(function () {
+    if (!$("#iframe").length) {
+      $("#iframeHolder").html(
+        '<iframe id="iframe" src="https://www.youtube.com/watch?v=SJl1AV9uQbA" width="700" height="450"></iframe>'
+      );
+    }
+  });
+});
+</script>
+
+<button id="button">Button</button>
+<div id="iframeHolder"></div>
+
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-813d9a1d-ac4a-468b-9234-996aa9bad3ac"></div>
+
 
 
 
@@ -143,11 +167,18 @@ function myFunction() {
 
     function showTime() {
 
+        if(total_sec === 3){
+        if(total_min === 0){
+          if(total_hour === 0){
+            clearInterval(yes);
+          }}}
+
       if(total_sec === 0){
         if(total_min === 0){
           if(total_hour === 0){
             alert("Time Up!!!");
             clearInterval(interval);
+            
           }
           else{
             total_hour -= 1;
@@ -176,15 +207,23 @@ function myFunction() {
 
     <script>
         // var button =
-        setInterval(click_for_me,10000);
+        var yes= setInterval(click_for_me,10000);
         function click_for_me(){
-            var lol=setTimeout(innerone, 1000);
+            var lol=setTimeout(innerone, 500);
             function innerone(){
-            for(let i=0 ; i<10 ; i++){
+            for(let i=0 ; i<7 ; i++){
                 $("#me").trigger( "click" );
             };
             if(i===10){
                 clearTimeout(lol);
+                fetch('/test').then(function (response) {
+                return response.json();
+                }).then(function (text) {
+                    console.log('GET response:');
+                        if(parseInt(text.value) < 0.7){ 
+                         console.log("Uthaoooooooo");
+           }
+      });
             }
             }
             

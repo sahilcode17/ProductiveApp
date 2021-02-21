@@ -1,4 +1,5 @@
-from flask import Flask,render_template,request
+from flask import Flask, render_template, request, jsonify
+from drowsee import mainn
 app = Flask(__name__)
 time=0
 
@@ -35,3 +36,15 @@ def ourway():
 @app.route('/yourway')
 def yourway():
     return render_template('yourway.html')
+
+
+@app.route('/test', methods=['GET', 'POST'])
+def testfn():
+    # GET request
+    if request.method == 'GET':
+        message = { 'value' :  mainn()}
+        return jsonify(message)  # serialize and use JSON headers
+    # POST request
+    if request.method == 'POST':
+        print(request.get_json())  # parse as JSON
+        return 'Sucesss', 200
