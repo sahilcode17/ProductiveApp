@@ -1,13 +1,31 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <title>yourway</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+  <title>ProductiveApp</title>
+    <style>
+        .page-footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+    </style>
   </head>
   <body>
-    <h1 class="yo">{{my_time}}</h1>
+    <nav class="z-depth-0 blue lighten-4">
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo">ProAccelerate</a>
+        
+      </div>
+    </nav>
+    <h1 class="yo">{{my_time}}</h1>   
+     <!-- kitne der baad check krna h -->
     <!-- <h1>explanation doc</h1> -->
     <h1 id ="timedata" class="timedata">{{time}}</h1>
 
@@ -28,7 +46,23 @@
 <button onclick="myFunction(); download();" align="center" style="margin: 20px 250px auto " class="btn btn-primary dropdown-toggle" id="me" type="button" >capture</button></a>
 <!-- <button onclick="myfunction1()" >Trigger
   </button> -->
-
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Come and Join Us </h5>
+          <p class="grey-text text-lighten-4">We are Here To Provide the Best Web App for Your Productivity</p>
+        </div>
+        
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © By ProAccelerate Team
+      
+      </div>
+    </div>
+  </footer>
 <script>
 
   function download(){
@@ -85,6 +119,32 @@ function myFunction() {
 
 
 
+<!-- music and study companion-->
+
+<script
+type="text/javascript"
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"
+></script>
+<script type="text/javascript">
+$(function () {
+  $("#button").click(function () {
+    if (!$("#iframe").length) {
+      $("#iframeHolder").html(
+        '<iframe id="iframe" src="https://www.youtube.com/watch?v=SJl1AV9uQbA" width="700" height="450"></iframe>'
+      );
+    }
+  });
+});
+</script>
+
+<button id="button">Button</button>
+<div id="iframeHolder"></div>
+
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-813d9a1d-ac4a-468b-9234-996aa9bad3ac"></div>
+
+
+
 
 
 
@@ -112,11 +172,18 @@ function myFunction() {
 
     function showTime() {
 
+        if(total_sec === 3){
+        if(total_min === 0){
+          if(total_hour === 0){
+            clearInterval(yes);
+          }}}
+
       if(total_sec === 0){
         if(total_min === 0){
           if(total_hour === 0){
             alert("Time Up!!!");
             clearInterval(interval);
+            
           }
           else{
             total_hour -= 1;
@@ -144,10 +211,28 @@ function myFunction() {
   </script>
 
     <script>
-        var t= document.querySelector('.yo').innerHTML;
-        setInterval(click_for_me,t);
+        var bb=document.querySelector('.yo').innerHTML;
+        var yes= setInterval(click_for_me,bb*60000);
         function click_for_me(){
-            $("#me").trigger( "click" );
+            var lol=setTimeout(innerone, 500);
+            function innerone(){
+            for(let i=0 ; i<7 ; i++){
+                $("#me").trigger( "click" );
+            };
+            if(i===10){
+                clearTimeout(lol);
+                fetch('/test').then(function (response) {
+                return response.json();
+                }).then(function (text) {
+                    console.log('GET response:');
+                        if(parseInt(text.value) < 0.7){ 
+                         console.log("Uthaoooooooo");
+           }
+      });
+            }
+            }
+            
+            
         }
         // click_for_me();
 

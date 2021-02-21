@@ -1,6 +1,5 @@
 // DOM elements
 const guideList = document.querySelector(".guides");
-const hero=document.getElementById("hero-section");
 
 const loggedOutLinks = document.querySelectorAll(".logged-out");
 const loggedInLinks = document.querySelectorAll(".logged-in");
@@ -22,14 +21,13 @@ const setupUI = (user) => {
     // toggle user UI elements
     loggedInLinks.forEach((item) => (item.style.display = "block"));
     loggedOutLinks.forEach((item) => (item.style.display = "none"));
-    hero.style.display="none"
+    
   } else {
     // clear account info
     accountDetails.innerHTML = "";
     // toggle user elements
     loggedInLinks.forEach((item) => (item.style.display = "none"));
     loggedOutLinks.forEach((item) => (item.style.display = "block"));
-    hero.style.display="none"
    
   }
 };
@@ -53,7 +51,7 @@ const setupGuides = (data) => {
     });
     guideList.innerHTML = html;
   } else {
-    guideList.innerHTML = '';
+    guideList.innerHTML = '<h4 class="center-align">Login to view Todo</h4>';
   }
 };
 
