@@ -1,6 +1,10 @@
 // DOM elements
 const guideList = document.querySelector(".guides");
+<<<<<<< HEAD
 
+=======
+const go = document.querySelector(".go");
+>>>>>>> 19e8c097ded31508329c9d43839c9a33e52c44d6
 const loggedOutLinks = document.querySelectorAll(".logged-out");
 const loggedInLinks = document.querySelectorAll(".logged-in");
 const accountDetails = document.querySelector(".account-details");
@@ -21,14 +25,22 @@ const setupUI = (user) => {
     // toggle user UI elements
     loggedInLinks.forEach((item) => (item.style.display = "block"));
     loggedOutLinks.forEach((item) => (item.style.display = "none"));
+<<<<<<< HEAD
     
+=======
+    go.style.display = "block";
+>>>>>>> 19e8c097ded31508329c9d43839c9a33e52c44d6
   } else {
     // clear account info
     accountDetails.innerHTML = "";
     // toggle user elements
     loggedInLinks.forEach((item) => (item.style.display = "none"));
     loggedOutLinks.forEach((item) => (item.style.display = "block"));
+<<<<<<< HEAD
    
+=======
+    go.style.display = "none";
+>>>>>>> 19e8c097ded31508329c9d43839c9a33e52c44d6
   }
 };
 
@@ -41,10 +53,9 @@ const setupGuides = (data) => {
       const li = `
             <li>
             <input style="opacity:1 ; pointer-events: auto; " type="radio" name="me" value='${guide.Time}' >
-            <br>
-              <label style="font-size:30; float:left;" class="grey lighten-4"> ${guide.Title} </label>
+              <label style="font-size:30" class="grey lighten-4"> ${guide.Title} </label>
               <br>
-              <label style="font-size:30;  " class="white"> ${guide.Time} </label>
+              <label style="font-size:30" class="white"> ${guide.Time} </label>
             </li>
           `;
       html += li;
